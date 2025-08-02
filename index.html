@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valle Grande</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+    }
+    header {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 50px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav button {
+      background-color: orange;
+      border: 1px solid #000;
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background-color: darkorange;
+    }
+    section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s;
+    }
+    section.active {
+      display: block;
+    }
+    #inicio img {
+      width: 80%;
+      max-width: 700px;
+      display: block;
+      margin: 20px auto;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+    .video-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 30px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/dTQztzP.jpeg" alt="Logo Valle Grande">
+    <nav>
+      <button onclick="showSection('inicio')">Inicio</button>
+      <button onclick="showSection('nosotros')">Nosotros</button>
+      <button onclick="showSection('historia')">Historia</button>
+      <button onclick="showSection('video')">Video</button>
+    </nav>
+  </header>
+
+  <section id="inicio" class="active">
+    <h1>Bienvenidos a Valle Grande</h1>
+    <img src="https://i.imgur.com/e91W9pA.jpeg" alt="Imagen Valle Grande">
+  </section>
+
+  <section id="nosotros">
+    <h2>¿Quiénes somos?</h2>
+    <p>
+      Valle Grande es actualmente un Centro de Educación Superior constituido por la Promotora de Obras Sociales y de Instrucción Popular (PROSIP) el 25 de febrero de 1965, reconocido por el Ministerio de Agricultura mediante Resolución Directoral N° 04383-AG-DGAG del 2 de junio de 1983 y por el Ministerio de Educación mediante Resolución Ministerial N°0751-92-ED.
+    </p>
+    <h2>Misión</h2>
+    <p>
+      Formar personas en el ámbito técnico profesional, considerando el sentido trascendente del hombre, desarrollando en ellos competencias, que faciliten su inserción laboral, contribuyendo de esta manera al desarrollo del país.
+    </p>
+    <h2>Visión</h2>
+    <p>
+      Ser una institución referente de excelencia de la educación técnico profesional del Perú, asociada al sector productivo.
+    </p>
+  </section>
+
+  <section id="historia">
+    <h2>Desarrollo histórico</h2>
+    <p>
+      Han transcurrido casi 50 años de trabajo y continuamos con el mismo deseo: seguir contribuyendo con el bienestar de las familias de Cañete y Yauyos.
+    </p>
+  </section>
+
+  <section id="video">
+    <h2>Visita nuestro canal de YouTube</h2>
+    <a href="https://www.youtube.com/channel/UCAy8Qkj1AQuqnKiogNdshBA" target="_blank">
+      <button class="video-btn">Ir al Canal</button>
+    </a>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
